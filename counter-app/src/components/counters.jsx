@@ -8,24 +8,20 @@ class Counters extends Component {
     fontWeight: 'bold',
   };
 
-  // style = {
-  //   position: 'absolute',
-  // };
-
   render() {
     // props içinden ilgilendiklerimizi alıyoruz.
     const { counters, onDecrement, onIncrement, onSetToZero, onDelete, onResetAll } = this.props;
 
     return (
-      // <div style={this.style}>
       <div>
         <button
           style={this.styleButtons}
           onClick={onResetAll}
-          className='btn btn-info btn-sm m-2'
+          className='btn btn-outline-info btn-sm m-2'
         >
           Reset All Counters
         </button>
+
         {counters.map(counter => (
           //   <Counter key={counter.id} value={counter.value} />
           //   <Counter key={counter.id} value={counter.value} id={counter.id}>

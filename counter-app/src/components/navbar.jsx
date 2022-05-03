@@ -6,15 +6,31 @@
 // normalde altta parametre olarak "props" olacaktı ama biz onun içinden totalCounters
 // kısmını seçtik.
 // Bu tip fonksiyonlar içinde life hooks KULLANILAMAZ. Class tipi yazılırsa kullanılabilir.
+// aşağıda parametre olarak geçen kısım { totalCounters } = this.props; demek
 const NavBar = ({ totalCounters }) => {
   return (
-    <nav className='navbar navbar-dark bg-dark'>
+    <nav className='navbar navbar-dark bg-dark bg-gradient'>
       <div className='container-fluid'>
         <a
           className='navbar-brand'
-          href='#'
+          //href='#'
         >
-          Total Number of Counters: <span className='badge rounded-pill bg-secondary'>{totalCounters}</span>
+          <div
+            className='spinner-grow spinner-grow-sm bg-warning'
+            role='status'
+          ></div>
+          &nbsp;
+          <span>counter-app /</span> &nbsp;
+          <span
+            type='badge'
+            className='badge bg-primary position-relative'
+          >
+            Active Counters
+            <span className='position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger text-bold'>
+              {totalCounters}
+              {/* <span class='visually-hidden'>unread messages</span> */}
+            </span>
+          </span>
         </a>
       </div>
     </nav>

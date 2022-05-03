@@ -69,7 +69,7 @@ class App extends Component {
       <React.Fragment>
         {/* NavBar içinde hesaplama yapılamıyor. İlgili değeri hazır yollamak lazım */}
         <NavBar totalCounters={this.state.counters.filter(c => c.value > 0 ).length} />
-        <main className="container">
+        <main className='container position-absolute' >
           <Counters 
             counters={this.state.counters}
             onDecrement={this.handleDecrement}
